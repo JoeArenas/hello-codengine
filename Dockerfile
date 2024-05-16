@@ -9,5 +9,5 @@ RUN mvn -f pom.xml clean package
 FROM openjdk:23-slim-bullseye
 WORKDIR /home/application
 COPY --from=build /home/app/target/hello-codengine-0.0.1-SNAPSHOT.jar ./app.jar
-EXPOSE 80
+EXPOSE 8080
 ENTRYPOINT ["java","-jar","/home/application/app.jar"]
